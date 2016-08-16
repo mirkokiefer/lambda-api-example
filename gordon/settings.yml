@@ -1,0 +1,28 @@
+---
+project: someproject
+default-region: eu-west-1
+code-bucket: aws-deployment-someproject
+npm-install-extra: --production && rm -rf test
+apps:
+  - gordon.contrib.lambdas
+  - index
+  - brands
+
+apigateway:
+    some-api:
+        description: Some HTTP Interface
+        resources:
+            /:
+                methods: [GET]
+                integration:
+                    lambda: index.index
+
+            /brands:
+                methods: [GET]
+                integration:
+                    lambda: brands.list
+
+            /brands/{brand_id}:
+                methods: [GET]
+                integration:
+                    lambda: brands.detail

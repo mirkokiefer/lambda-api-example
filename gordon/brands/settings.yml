@@ -1,0 +1,13 @@
+lambdas:
+
+  list:
+    description: Returns a list of brands
+    code: ./
+    handler: index.list
+    runtime: nodejs4.3
+
+  detail:
+    description: Returns a brand
+    code: ./
+    handler: index.detail
+    runtime: nodejs4.3

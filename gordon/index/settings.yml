@@ -1,0 +1,5 @@
+lambdas:
+
+  index:
+    description: API Index
+    code: index.js

@@ -1,0 +1,7 @@
+language: node_js
+node_js: 4.3
+script: bash ./test.sh
+after_success:
+- sudo pip install gordon
+- gordon build
+- gordon apply
